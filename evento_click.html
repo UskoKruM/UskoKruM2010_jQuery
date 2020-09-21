@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento Click</title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+    <p id="miParrafo">
+        Soy cambiante...
+    </p>
+    <button id="botonAccion">Click aquí</button>
+    <script>
+        $(function () {
+            let miParrafo = $('#miParrafo');
+            var estaOculto = false;
+
+            /*
+                        $('#botonAccion').click(function () {
+                            if (estaOculto) {
+                                miParrafo.show();
+                            } else {
+                                miParrafo.hide();
+                            }
+                            estaOculto = !estaOculto;
+                        });
+                        */
+            $('#botonAccion').click(() => {
+                if (estaOculto) {
+                    miParrafo.show();
+                } else {
+                    miParrafo.hide();
+                }
+                estaOculto = !estaOculto;
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script src="js/jquery-3.5.1.min.js"></script>
+        <!-- 
+            Tipo
+            Clase
+            Id
+            Posesión de un atributo
+            Value de un atributo
+            Indice
+            Pseudo-estado
+        -->
+        <a href="index.html"></a>                       <!-- 1 -->
+        <a id="segundo-link"></a>                       <!-- 2 -->
+        <a class="ejemplo"></a>                         <!-- 3 -->
+        <a class="ejemplo" href="noConflict.html"></a>  <!-- 4 -->
+        <span class="ejemplo"></span>                   <!-- 5 -->
+        <script>
+            $(function(){
+                $("a:not(.ejemplo)")
+            });
+        </script>
+    </body>
+</html>
