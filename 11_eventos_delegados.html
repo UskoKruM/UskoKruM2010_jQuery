@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document.on</title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+    <table id="tablaPaises"></table>
+    <script>
+        const $tablaPaises = $('#tablaPaises');
+
+        let paises = [{
+            "id": 149,
+            "nombre": "Perú",
+            "capital": "Lima"
+        }, {
+            "id": 623,
+            "nombre": "España",
+            "capital": "Madrid"
+        }, {
+            "id": 923,
+            "nombre": "Ecuador",
+            "capital": "Quito"
+        }];
+
+        const cargarTabla = () => {
+            let tabla = ``;
+            $.each(paises, (indice, pais) => {
+                tabla += `<tr>`;
+                tabla += `<td>${pais.nombre}</td>`;
+                tabla += `<td>${pais.capital}</td>`;
+                tabla += `<td><button id='${pais.id}' class='verId otraClase'>Ver Id</button></td>`;
+                tabla += `</tr>`;
+            });
+            $tablaPaises.html(tabla);
+            // DOM Elements as Selectors (Elementos del DOM como selectores):
+            $('.otraClase').each(function () {
+                // Explicar esto:
+                console.log(this);
+                console.log($(this)); // jQuery Object.
+                console.log($(this)[0]);
+            });
+        };
+
+        // $($tablaPaises).on('click', '.verId', function () {
+        $(document).on('click', '.verId', function () {
+            // console.log(this);
+            // console.log($(this));
+            // console.log($(this)[0].id);
+            console.log($(this).attr("id"));
+        });
+
+        // Probar el click encima de la tabla:
+        $('#tablaPaises').on('click', function () {
+            console.log($(this));
+            $(this).off('click'); // Desenlace del evento.
+        });
+
+        $(document).ready(function ($) {
+            cargarTabla();
+        });
+    </script>
+</body>
+
+</html>

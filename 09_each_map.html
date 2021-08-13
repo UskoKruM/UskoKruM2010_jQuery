@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$.each | $.map</title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li>Laravel</li>
+        <li>Spring</li>
+        <li>Django</li>
+    </ul>
+    <script>
+        $("li").each(function (indice) {
+            // console.log(indice);
+            // console.log($(this));
+            console.log($(this).text());
+            console.log(`${indice} => ${$(this).text()}`);
+        });
+
+        let lenguajes = ["PHP", "Python", "JavaScript", "Ruby", "Kotlin", "Dart"];
+
+        $.each(lenguajes, (indice, leng) => {
+            console.log(`[${indice}] => ${leng}`);
+        });
+
+        let dimensiones = $.map(lenguajes, (len) => len.length);
+        console.log(dimensiones);
+
+        console.log($.isArray(lenguajes));
+    </script>
+</body>
+
+</html>

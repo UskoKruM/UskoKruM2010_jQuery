@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método attr</title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+    <table id="tablaPaises"></table>
+    <script>
+        const $tablaPaises = $('#tablaPaises');
+
+        let paises = [{
+            "id": 149,
+            "nombre": "Perú",
+            "capital": "Lima"
+        }, {
+            "id": 623,
+            "nombre": "España",
+            "capital": "Madrid"
+        }, {
+            "id": 923,
+            "nombre": "Ecuador",
+            "capital": "Quito"
+        }];
+
+        const cargarTabla = () => {
+            let tabla = ``;
+            $.each(paises, (indice, pais) => {
+                tabla += `<tr>`;
+                tabla += `<td>${pais.nombre}</td>`;
+                tabla += `<td>${pais.capital}</td>`;
+                tabla += `<td><button id='${pais.id}' class='verId otraClase'>Ver Id</button></td>`;
+                tabla += `</tr>`;
+            });
+            $tablaPaises.html(tabla);
+        };
+
+        $(document).on('click', '.verId', function () {
+            // Obteniendo valores => getAttribute()
+            console.log($(this).attr("id"));
+            console.log($(this).attr("class"));
+            let clases = $(this).attr("class").split(" ");
+            console.log(clases);
+            // Asignando valores => setAttribute()
+            let id = $(this).attr("id");
+            $(this).attr("name", `btn${id}`);
+            console.log($(this).attr("name"));
+            // Removiendo atributos:
+            $(this).removeAttr("id");
+        });
+
+        $(document).ready(function ($) {
+            cargarTabla();
+        });
+    </script>
+</body>
+
+</html>

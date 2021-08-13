@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML String as Selectors</title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+    <script>
+        let plantilla_a = (href, texto) => {
+            return $(`<div><a href='${href}' target='_blank'>${texto}</a></div>`);
+        };
+
+        $(document).ready(function ($) {
+            $('body').html(plantilla_a("http://www.google.com", "Google"));
+            // Esto lo anexa:
+            // $('body').append(plantilla_a("http://www.google.com", "Google"));
+        });
+    </script>
+</body>
+
+</html>
