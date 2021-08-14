@@ -7,9 +7,11 @@ Curso de jQuery desde 0, creado en YouTube, en el canal:
 
 <br/>
 
-![](./preview1.JPG)
+![](./preview1.png)
 <br/><br/>
-![](./preview2.JPG)
+![](./preview2.png)
+<br/><br/>
+![](./preview3.png)
 
 # 🌍 Por si deseas contactarme 👨‍💻 :
 
