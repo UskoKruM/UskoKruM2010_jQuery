@@ -33,22 +33,21 @@
                 tabla += `<tr>`;
                 tabla += `<td>${pais.nombre}</td>`;
                 tabla += `<td>${pais.capital}</td>`;
-                tabla += `<td><button id='${pais.id}' class='verId otraClase'>Ver Id</button></td>`;
+                tabla += `<td><button id='${pais.id}' class='otraClase verId'>Ver Id</button></td>`;
                 tabla += `</tr>`;
             });
             $tablaPaises.html(tabla);
         };
 
         $(document).on('click', '.verId', function () {
-            // Obteniendo valores => getAttribute()
-            console.log($(this).attr("id"));
-            console.log($(this).attr("class"));
+            // Obteniendo atributos:
+            // console.log($(this).attr("id"));
+            // console.log($(this).attr("class"));
             let clases = $(this).attr("class").split(" ");
-            console.log(clases);
-            // Asignando valores => setAttribute()
+            // console.log(clases);
+            // Asignando atributos:
             let id = $(this).attr("id");
-            $(this).attr("name", `btn${id}`);
-            console.log($(this).attr("name"));
+            $(this).attr("name", `btn_${id}`);
             // Removiendo atributos:
             $(this).removeAttr("id");
         });

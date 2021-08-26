@@ -11,13 +11,14 @@
 <body>
     <script>
         let plantilla_a = (href, texto) => {
-            return $(`<div><a href='${href}' target='_blank'>${texto}</a></div>`);
+            return $(`<div><a href='${href}' alt='${texto}' target='_blank'>${texto}</a></div>`);
         };
 
         $(document).ready(function ($) {
-            $('body').html(plantilla_a("http://www.google.com", "Google"));
-            // Esto lo anexa:
-            // $('body').append(plantilla_a("http://www.google.com", "Google"));
+            // $('body').html(plantilla_a("http://www.google.com", "Google"));
+            $('body').append(plantilla_a("http://www.google.com", "Google"));
+            $('body').append(plantilla_a("http://www.youtube.com", "YouTube"));
+            $('body').append(plantilla_a("http://www.heroku.com", "Heroku"));
         });
     </script>
 </body>

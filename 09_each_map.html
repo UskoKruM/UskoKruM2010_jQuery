@@ -15,23 +15,24 @@
         <li>Django</li>
     </ul>
     <script>
-        $("li").each(function (indice) {
+        $("li").each(function (indice, elemento) {
             // console.log(indice);
             // console.log($(this));
-            console.log($(this).text());
-            console.log(`${indice} => ${$(this).text()}`);
+            // console.log($(this).text());
+            // console.log(`${indice} => ${$(this).text()}`);
         });
 
         let lenguajes = ["PHP", "Python", "JavaScript", "Ruby", "Kotlin", "Dart"];
 
-        $.each(lenguajes, (indice, leng) => {
-            console.log(`[${indice}] => ${leng}`);
+        $.each(lenguajes, (indice, lenguaje) => {
+            // console.log(`[${indice}] => ${lenguaje}`);
         });
 
-        let dimensiones = $.map(lenguajes, (len) => len.length);
+        let dimensiones = $.map(lenguajes, (lenguaje) => lenguaje.length);
         console.log(dimensiones);
 
         console.log($.isArray(lenguajes));
+        console.log($.isArray(dimensiones));
     </script>
 </body>
 

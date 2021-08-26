@@ -33,20 +33,17 @@
                 tabla += `<tr>`;
                 tabla += `<td>${pais.nombre}</td>`;
                 tabla += `<td>${pais.capital}</td>`;
-                tabla += `<td><button id='${pais.id}' class='verId otraClase'>Ver Id</button></td>`;
+                tabla += `<td><button id='${pais.id}' class='otraClase verId'>Ver Id</button></td>`;
                 tabla += `</tr>`;
             });
             $tablaPaises.html(tabla);
-            // DOM Elements as Selectors (Elementos del DOM como selectores):
             $('.otraClase').each(function () {
-                // Explicar esto:
                 console.log(this);
                 console.log($(this)); // jQuery Object.
                 console.log($(this)[0]);
             });
         };
 
-        // $($tablaPaises).on('click', '.verId', function () {
         $(document).on('click', '.verId', function () {
             // console.log(this);
             // console.log($(this));
@@ -54,8 +51,7 @@
             console.log($(this).attr("id"));
         });
 
-        // Probar el click encima de la tabla:
-        $('#tablaPaises').on('click', function () {
+        $($tablaPaises).on('click', $tablaPaises, function () {
             console.log($(this));
             $(this).off('click'); // Desenlace del evento.
         });

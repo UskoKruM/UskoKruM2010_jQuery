@@ -27,25 +27,20 @@
             "capital": "Quito"
         }];
 
-        let paisSeleccionado = null;
-
         const cargarTabla = () => {
             let tabla = ``;
             $.each(paises, (indice, pais) => {
                 tabla += `<tr>`;
                 tabla += `<td>${pais.nombre}</td>`;
                 tabla += `<td>${pais.capital}</td>`;
-                // Inspeccionar para demostrar como se guardan los datos:
-                tabla +=
-                    `<td><button id='${pais.id}' data-pais='${JSON.stringify(pais)}'' class='verId'>Ver Id</button></td>`;
+                tabla += `<td><button id='${pais.id}' data-pais='${JSON.stringify(pais)}' class='verId'>Ver Id</button></td>`;
                 tabla += `</tr>`;
             });
             $tablaPaises.html(tabla);
         };
 
         $(document).on('click', '.verId', function () {
-            // paisSeleccionado = $(this).data("pais");
-            paisSeleccionado = $(this).data("pais");
+            let paisSeleccionado = $(this).data("pais");
             console.log(paisSeleccionado);
         });
 

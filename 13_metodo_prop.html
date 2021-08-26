@@ -4,18 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Método data</title>
+    <title>Método prop</title>
     <script src="js/jquery-3.5.1.min.js"></script>
 </head>
 
 <body>
-    ¿Válido? <input type="checkbox" id="chkValido">
+    ¿Válido? <input type="checkbox" class="miClase" id="chkValido">
     <script>
-        // attr() y prop() son intercambiables en la mayoría de caso, pero no siempre.
+        // attr() y prop() son intercambiables en la mayoría de casos.
         $(document).ready(function ($) {
-
-            $('#chkValido').prop('checked', true);
-
+            // $('#chkValido').prop('checked', true);
+            // $('#chkValido').attr('checked', false);
+            // console.log($('#chkValido'));
+            console.log($('#chkValido').prop('checked'));
+            console.log($('#chkValido').prop('className'));
         });
     </script>
 </body>
